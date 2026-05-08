@@ -1,0 +1,140 @@
+.pages_projets {
+  padding: 70px 20px;
+  background: #dad7cd;
+  text-align: center;
+}
+
+.pages_projets h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 35px;
+  color: #3a5a40;
+}
+
+/* Section projets */
+.projects-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 110px 20px 70px;
+}
+
+.projects-section h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1b1b1b;
+  margin-bottom: 40px;
+}
+
+/* Grille des projets */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Tablette : 2 colonnes */
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop : 3 colonnes */
+@media (min-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Projet unique */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+/* Sur tablette et laptop : image à gauche, texte à droite */
+@media (min-width: 768px) {
+  .project-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* Image du projet */
+.project-image {
+  flex: 1 1 280px;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.project-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #1b1b1b;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+/* Contenu texte */
+.project-content {
+  flex: 1 1 380px;
+  margin-top: 18px;
+}
+
+@media (min-width: 768px) {
+  .project-content {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+
+.project-content h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3a5a40;
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  color: #1b1b1b;
+  margin: 6px 0;
+}
+
+.project-content strong {
+  color: #1b1b1b;
+}
+
+.project-links {
+  margin-top: 14px;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 16px;
+  color: #3a5a40;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}

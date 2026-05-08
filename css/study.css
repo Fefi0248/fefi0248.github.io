@@ -1,0 +1,54 @@
+.pages_etudes {
+  padding: 70px 20px;
+  background: #dad7cd;
+  text-align: center;
+}
+
+.pages_etudes h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 35px;
+  color: #3a5a40;
+}
+/* Grille des études */
+.studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Carte */
+.study-card {
+  background: #f4f4f4; /* gris très clair */
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.study-card:hover {
+  transform: translateY(-10px);
+  background-color: #ffffff;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.16);
+}
+
+.study-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.study-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 6px 0;
+}
+
+.study-card {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #6b7280;
+}

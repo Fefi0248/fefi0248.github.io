@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/generalstyle.css" />
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/project.css">
+  <link rel="stylesheet" href="css/study.css">
+  <link rel="stylesheet" href="css/competences.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<!--script src="home.js"></script-->
+<body>
+
+<header class="site-header">
+  <nav class="my-navbar">
+    <a class="logo" href="#Home">Mon Portfolio</a>
+
+    <details class="nav-dropdown">
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="#Home">Accueil</a></li>
+        <li><a href="#About">À propos</a></li>
+        <li><a href="#Projets">Mes projets</a></li>
+        <li><a href="#Etudes">Mes études</a></li>
+        <li><a href="#Competences">Compétences</a></li>
+        <li><a href="#Contacts">Contacts</a></li>
+      </ul>
+    </details>
+
+    <ul class="nav-desktop">
+      <li><a href="#Home">Accueil</a></li>
+      <li><a href="#About">À propos</a></li>
+      <li><a href="#Projets">Mes projets</a></li>
+      <li><a href="#Etudes">Mes études</a></li>
+      <li><a href="#Competences">Compétences</a></li>
+      <li><a href="#Contacts">Contacts</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="Home">
+  <div class="hero-shape"></div>
+
+  <div class="hero-content">
+    <h1 id="loko">Designer web freelance et UI & Graphique designer</h1>
+    <p>
+      Je crée des sites web modernes, responsives et centrées utilisateurs, 
+      pour des projets qui veulent une présence en ligne simple, claire et professionnelle.
+    </p>
+    <div class="hero-buttons">
+      <a href="#Projets" class="btn btn-primary">Voir mes projets</a>
+      <a href="images/Cv_Fefy.pdf" download class="btn btn-cv">Télécharger mon CV</a>
+      <a href="#Contacts" class="btn btn-secondary">Me contacter</a>
+    </div>
+  </div>
+</section>
+
+  <hr />
+
+  <section class="pages_about" id="About">
+  <h2>À propos de moi</h2>  <!-- TOUJOURS EN HAUT -->
+  
+  <div class="about-flex">
+    <div class="content">
+      <h2>Designer web | graphique freelance</h2>
+
+      <p>
+        Je suis Fefimihanta RANDRIANJAFIMIADANA, designer web et graphique freelance
+        basé à Antananarivo. Passionné par le design numérique et la création visuelle,
+        je mets mes compétences au service de particuliers et de petites entreprises
+        qui souhaitent renforcer leur présence en ligne.
+      </p>
+
+      <p>
+        Après une formation en informatique et en design, j’ai développé une solide
+        maîtrise du web (HTML, CSS, JavaScript, React, Bootstrap) ainsi que des outils
+        de création graphique (Photoshop, Figma, Illustrator). Mon objectif est de
+        transformer vos idées en sites et en visuels propres, modernes et adaptés à
+        votre public cible.
+      </p>
+
+      <p>
+        Rigoureux, créatif et à l’écoute, je collabore étroitement avec mes clients
+        pour comprendre leurs besoins et proposer des solutions claires et efficaces.
+        Que ce soit un site vitrine, un portfolio ou une identité visuelle complète,
+        je m’engage à vous accompagner du prototype à la livraison finale.
+      </p>
+    </div>
+    
+    <img src="images/propos.jpg" alt="Ma photo" class="avatar" />
+  </div>
+</section>
+
+  <hr />
+
+  <section class="pages_projets" id="Projets">
+    <h2>Mes projets</h2>
+  <div class="project-grid">
+    <!-- Projet 1 -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="images/projet-1.jpg" alt="Portfolio personnel de développeur web">
+        <span class="project-category">Développement web</span>
+      </div>
+      <div class="project-content">
+        <h4>Portfolio personnel de développeur web</h4>
+        <p><strong>Outils :</strong> HTML, CSS, JavaScript, React, Bootstrap</p>
+        <p><strong>Objectif :</strong> Créer un portfolio moderne et responsive pour mettre en avant mes compétences en développement web et UI.</p>
+        <div class="project-links">
+          <a href="#" target="_blank">Voir en ligne</a>
+          <a href="#" target="_blank">Code source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet 2 -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="images/projet-2.jpg" alt="Site vitrine pour une boutique de vêtements">
+        <span class="project-category">Front‑end</span>
+      </div>
+      <div class="project-content">
+        <h4>Site vitrine pour une boutique de vêtements</h4>
+        <p><strong>Outils :</strong> HTML, CSS, JavaScript, Tailwind CSS</p>
+        <p><strong>Objectif :</strong> Présenter les collections et permettre aux clients de découvrir les produits en ligne.</p>
+        <div class="project-links">
+          <a href="#" target="_blank">Voir en ligne</a>
+          <a href="#" target="_blank">Code source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet 3 -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="images/projet-3.jpg" alt="Application de gestion de tâches">
+        <span class="project-category">React / Fullstack</span>
+      </div>
+      <div class="project-content">
+        <h4>Application de gestion de tâches</h4>
+        <p><strong>Outils :</strong> React, Firebase, Figma</p>
+        <p><strong>Objectif :</strong> Permettre à une équipe de suivre ses tâches, ses deadlines et ses livrables en temps réel.</p>
+        <div class="project-links">
+          <a href="#" target="_blank">Voir en ligne</a>
+          <a href="#" target="_blank">Code source</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+  <hr />
+
+<section class="pages_etudes" id="Etudes">
+  <h2>Mes études & formations</h2>
+  <div class="studies-grid">
+    <article class="study-card">
+      <h4>Communication et Multimédia Master 1</h4>
+      <p><strong>Établissement :</strong> EMIT / Université de Fianarantsoa</p>
+      <p><strong>Année :</strong> 2025 – 2026</p>
+      <p><strong>Diplôme :</strong> Attestation</p>
+    </article>
+
+    <article class="study-card">
+    <h4>Communication et Multimédia L3</h4>
+      <p><strong>Établissement :</strong> EMIT / Université de Fianarantsoa</p>
+      <p><strong>Année :</strong> 2024 – 2025</p>
+      <p><strong>Diplôme :</strong> Licence</p>
+    </article>
+
+    <article class="study-card">
+    <h4>Information, Communication et Multimédia L2</h4>
+      <p><strong>Établissement :</strong> EMIT / Université de Fianarantsoa</p>
+      <p><strong>Année :</strong> 2023 – 2024</p>
+      <p><strong>Diplôme :</strong> Rélévé de note</p>
+    </article>
+
+    <article class="study-card">
+    <h4>Information, Communication et Multimédia L1</h4>
+      <p><strong>Établissement :</strong> EMIT / Université de Fianarantsoa</p>
+      <p><strong>Année :</strong> 2022 – 2023</p>
+      <p><strong>Diplôme :</strong> Rélévé de note</p>
+    </article>
+
+    <article class="study-card">
+    <h4>Bachelier de l'eneseignement Secondaire</h4>
+      <p><strong>Établissement :</strong> Lycée RANOHAVIMANANA NORBERT</p>
+      <p><strong>Année :</strong> 2021 – 2022</p>
+      <p><strong>Diplôme :</strong> Baccalauréat</p>
+    </article>
+
+    <article class="study-card">
+      <h4>Stage en tant que graphisme et communication digitale</h4>
+      <p><strong>Établissement :</strong> Nir'Info Ampefiloha/Antananarivo</p>
+      <p><strong>Date :</strong> 16 juin - 16 septembre 2025</p>
+      <p><strong>Diplôme :</strong> Attestation</p>
+    </article>
+
+    <article class="study-card">
+      <h4>Stage en tant que développeur web BackOffice et FrontOffice</h4>
+      <p><strong>Établissement :</strong> Radio Fréquences des Jeunes Ambatondrazaka</p>
+      <p><strong>Date :</strong> 24 Juin - 24 Août 2024</p>
+      <p><strong>Diplôme :</strong> Attestation</p>
+    </article>
+  </div>
+</section>
+
+<hr>
+
+<section class="competences" id="Competences">
+  <h2>Compétences</h2>
+
+  <div class="skills-grid">
+    <article class="skill-card">
+      <h3>Integration web</h3>
+      <p>HTML, CSS, Wordpress</p>
+      <div class="bar"><span class="fill" style="--value: 70%;"></span></div>
+      <div class="percent">70%</div>
+    </article>
+
+    <article class="skill-card">
+      <h3>Montage photo</h3>
+      <p>Adobe photoshop, Adobe Illustrator</p>
+      <div class="bar"><span class="fill" style="--value: 75%;"></span></div>
+      <div class="percent">75%</div>
+    </article>
+
+    <article class="skill-card">
+      <h3>Montage vidéo</h3>
+      <p>Adobe after effect, Adobe Premier Pro</p>
+      <div class="bar"><span class="fill" style="--value: 70%;"></span></div>
+      <div class="percent">70%</div>
+    </article>
+
+        <article class="skill-card">
+      <h3>Technique d'animation</h3>
+      <p>3DsMax, JavaScript</p>
+      <div class="bar"><span class="fill" style="--value: 60%;"></span></div>
+      <div class="percent">60%</div>
+    </article>
+
+    <article class="skill-card">
+      <h3>Design UX/UI</h3>
+      <p>Figma, Adobe Xd</p>
+      <div class="bar"><span class="fill" style="--value: 90%;"></span></div>
+      <div class="percent">90%</div>
+    </article>
+
+    <article class="skill-card">
+      <h3>Production Multimédia</h3>
+      <p>Photos, vidéos, son</p>
+      <div class="bar"><span class="fill" style="--value: 85%;"></span></div>
+      <div class="percent">85%</div>
+    </article>
+
+    <article class="skill-card">
+      <h3>Informatique bureautique</h3>
+      <p>Word, Excel, PowerPoint, Access</p>
+      <div class="bar"><span class="fill" style="--value: 95%;"></span></div>
+      <div class="percent">95%</div>
+    </article>
+  </div>
+</section>
+
+  <hr />
+
+<section class="pages_contacts" id="Contacts">
+  <h2>Contacter moi</h2>
+
+  <div class="contact-wrapper">
+    <!-- Infos de contact (à gauche) -->
+    <div class="contact-info">
+      <p><strong>WhatsApp :</strong> +261 38 39 017 23</p>
+      <p><strong>LinkedIn :</strong>
+        <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">
+          Fefimihanta Randrianjafimiadana</a></p>
+      <p><strong>e-mail :</strong>
+        <a href="mailto:mihantafefi@gmail.com">mihantafefi@gmail.com</a></p>
+        <p><strong>Facebook :</strong><a href="http://">Randrianjafimiadana Fefimihanta</a></p>
+        <p><strong>Adresse :</strong>Campus universtitaire B309</p>
+    </div>
+
+    <!-- Formulaire (à droite) -->
+    <div class="contact-form-wrapper">
+      <form class="contact-form">
+        <h4>Écrivez votre demande</h4>
+        <div class="form-row-inline">
+  <label for="name">Nom</label>
+  <input type="text" id="name" name="name">
+</div>
+
+<div class="form-row-inline">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email">
+</div>
+
+<label for="message">Message</label>
+<textarea id="message" name="message"></textarea>
+
+<div class="form-buttons">
+  <button type="submit">Envoyer</button>
+  <button type="reset">Annuler</button>
+</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <footer></footer>
+
+</body>
+</html>

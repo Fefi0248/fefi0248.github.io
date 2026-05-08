@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'PoliceTitre';
+  src: url('../font/EduAUVICWANTGuides-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+}
+.pages_home {
+  padding: 70px 20px;
+  background: #dad7cd;
+  text-align: center;
+}
+
+.hero {
+  color: #1b1b1b;
+  padding: 120px 20px 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: heroUp 1s ease-out forwards;
+}
+
+/* Forme décorative en arrière-plan (douce, discrète) */
+.hero-shape {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(circle at 70% 30%, #3a5a4030, transparent 70%);
+  border-radius: 50% 0 0 50%;
+  z-index: 0;
+  opacity: 0;
+  transform: translateY(70px);
+  animation: heroUp 1.2s ease-out forwards;
+}
+
+/* Contenu */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: heroUp 1s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+/* Titre principal */
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #3a5a40;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(35px);
+  animation: heroUp 0.9s ease-out forwards;
+  animation-delay: 0.25s;
+  font-family: 'PoliceTitre', sans-serif;
+}
+
+/* Texte d’accroche */
+.hero p {
+  font-size: 1.1rem;
+  color: #1b1b1b;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroUp 0.9s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Boutons */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroUp 0.9s ease-out forwards;
+  animation-delay: 0.55s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: #3a5a40;
+  color: #fff;
+  border-color: #3a5a40;
+}
+
+.btn-primary:hover {
+  background-color: #1b1b1b;
+  border-color: #1b1b1b;
+  transform: translateY(-2px);
+}
+
+.btn-cv {
+  background-color: transparent;
+  color: #1b1b1b;
+  border: 1px solid #3a5a40;
+}
+
+.btn-cv:hover {
+  background-color: #3a5a40;
+  color: #fff;
+  border-color: #3a5a40;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #1b1b1b;
+  border: 1px solid #3a5a40;
+}
+
+.btn-secondary:hover {
+  background-color: #3a5a40;
+  color: #fff;
+  border-color: #3a5a40;
+  transform: translateY(-2px);
+}
+
+@keyframes heroUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 767px) {
+  .hero {
+    padding: 90px 16px 80px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

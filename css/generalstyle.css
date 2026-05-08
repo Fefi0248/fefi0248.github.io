@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'MaPolice';
+  src: url('../font/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #dad7cd;
+  --surface: rgba(58, 90, 64, 0.8);
+  --surface-strong: rgba(58, 90, 64, 0.15);
+  --text: #1b1b1b;
+  --primary: #3a5a40;
+  --primary-dark: #2f4f36;
+  --shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  --radius: 18px;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'MaPolice', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.my-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 14px 24px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-desktop a,
+.nav-dropdown a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all var(--transition);
+  display: block;
+}
+
+.nav-desktop a:hover,
+.nav-dropdown a:hover {
+  background: var(--primary);
+}
+
+.nav-dropdown {
+  display: none;
+  position: relative;
+}
+
+.nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown ul {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  background: rgba(58, 90, 64, 0.95);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown li + li {
+  margin-top: 6px;
+}
+
+.nav-dropdown a {
+  padding: 12px 14px;
+}
+
+/* Tablette et smartphone */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: block;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+  .my-navbar {
+    padding: 12px 16px;
+  }
+
+  .nav-dropdown ul {
+    width: min(260px, 92vw);
+  }
+}
+
+.scroll-indicator {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 180px;
+  height: 6px;
+  background: rgba(27, 27, 27, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
