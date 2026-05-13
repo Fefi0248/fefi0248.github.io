@@ -268,50 +268,58 @@
 </section>
 
   <hr />
-
+  
 <section class="pages_contacts" id="Contacts">
-  <h2>Contacter moi</h2>
+    <h2>Me contacter</h2>
 
-  <div class="contact-wrapper">
-    <!-- Infos de contact (à gauche) -->
-    <div class="contact-info">
-      <p><strong>WhatsApp :</strong> +261 38 39 017 23</p>
-      <p><strong>LinkedIn :</strong>
-        <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">
-          Fefimihanta Randrianjafimiadana</a></p>
-      <p><strong>e-mail :</strong>
-        <a href="mailto:mihantafefi@gmail.com">mihantafefi@gmail.com</a></p>
-        <p><strong>Facebook :</strong><a href="http://">Randrianjafimiadana Fefimihanta</a></p>
-        <p><strong>Adresse :</strong>Campus universtitaire B309</p>
+    <div class="contact-wrapper">
+        <!-- Infos de contact (à gauche) -->
+        <div class="contact-info">
+            <p><strong>WhatsApp :</strong> +261 38 39 017 23</p>
+            <p><strong>LinkedIn :</strong>
+                <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">
+                    Fefimihanta Randrianjafimiadana</a></p>
+            <p><strong>e-mail :</strong>
+                <a href="mailto:mihantafefi@gmail.com">mihantafefi@gmail.com</a></p>
+            <p><strong>Facebook :</strong> <a href="#">Randrianjafimiadana Fefimihanta</a></p>
+            <p><strong>Adresse :</strong> Campus universitaire B309</p>
+        </div>
+
+        <!-- Formulaire (à droite) -->
+        <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form">
+                <h4>Écrivez votre demande</h4>
+                
+                <div class="form-row-inline">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-row-inline">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <div class="form-buttons">
+                    <button type="submit">Envoyer</button>
+                    <button type="reset">Annuler</button>
+                </div>
+                
+                <!-- Message de statut -->
+                <div id="form-status" style="margin-top: 15px; font-size: 14px;"></div>
+            </form>
+        </div>
     </div>
-
-    <!-- Formulaire (à droite) -->
-    <div class="contact-form-wrapper">
-      <form class="contact-form">
-        <h4>Écrivez votre demande</h4>
-        <div class="form-row-inline">
-  <label for="name">Nom</label>
-  <input type="text" id="name" name="name">
-</div>
-
-<div class="form-row-inline">
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email">
-</div>
-
-<label for="message">Message</label>
-<textarea id="message" name="message"></textarea>
-
-<div class="form-buttons">
-  <button type="submit">Envoyer</button>
-  <button type="reset">Annuler</button>
-</div>
-      </form>
-    </div>
-  </div>
 </section>
 
-  <footer></footer>
+<!-- EmailJS (obligatoire) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Ton fichier JS -->
+<script src="contact.js"></script>
 
 </body>
 </html>

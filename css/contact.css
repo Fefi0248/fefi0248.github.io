@@ -3,13 +3,37 @@
   color: #1b1b1b;
   padding: 80px 20px 60px;
   text-align: center;
+  position: relative;
+  overflow-x: hidden;
 }
 
+/* Animation d'entrée pour le titre */
 .pages_contacts h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
   color: #3a5a40;
+  animation: fadeInDown 0.8s ease-out;
+  position: relative;
+  display: inline-block;
+}
+
+/* Effet de soulignement animé pour le titre */
+.pages_contacts h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #3a5a40;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.pages_contacts h2:hover::after {
+  width: 60%;
 }
 
 .contact-wrapper {
@@ -45,19 +69,51 @@
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+/* Délais d'animation différents pour chaque carte */
+.contact-info {
+  animation-delay: 0.1s;
+}
+
+.contact-form-wrapper {
+  animation-delay: 0.2s;
+}
+
+.contact-info:hover,
+.contact-form-wrapper:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
+  border-color: #3a5a4040;
+}
+
+/* Animation d'entrée pour les éléments de contact-info */
+.contact-info p {
+  font-size: 0.95rem;
+  margin: 8px 0;
+  color: #1b1b1b;
+  opacity: 0;
+  transform: translateX(-15px);
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.contact-info p:nth-child(1) { animation-delay: 0.2s; }
+.contact-info p:nth-child(2) { animation-delay: 0.3s; }
+.contact-info p:nth-child(3) { animation-delay: 0.4s; }
+.contact-info p:nth-child(4) { animation-delay: 0.5s; }
+.contact-info p:nth-child(5) { animation-delay: 0.6s; }
 
 .contact-info h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: #3a5a40;
   margin-bottom: 14px;
-}
-
-.contact-info p {
-  font-size: 0.95rem;
-  margin: 8px 0;
-  color: #1b1b1b;
+  position: relative;
+  display: inline-block;
 }
 
 .contact-info strong {
@@ -67,10 +123,30 @@
 .contact-info a {
   color: #3a5a40;
   text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Animation de soulignement pour les liens */
+.contact-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3a5a40;
+  transition: width 0.3s ease;
+}
+
+.contact-info a:hover::after {
+  width: 100%;
 }
 
 .contact-info a:hover {
-  text-decoration: underline;
+  color: #2a4a30;
+  transform: translateX(3px);
+  display: inline-block;
 }
 
 .contact-form {
@@ -87,6 +163,22 @@
   font-weight: 600;
   color: #3a5a40;
   margin-bottom: 6px;
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Animation de clignotement pour le titre du formulaire */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.contact-form h4::before {
+  content: '✉️';
+  margin-right: 8px;
+  animation: softPulse 2s ease-in-out infinite;
+  display: inline-block;
 }
 
 .form-row-inline {
@@ -102,6 +194,7 @@
   flex-shrink: 0;
   font-size: 0.9rem;
   color: #1b1b1b;
+  transition: all 0.3s ease;
 }
 
 .form-row-inline input {
@@ -115,6 +208,7 @@
   font-size: 0.9rem;
   color: #1b1b1b;
   margin-top: 6px;
+  transition: all 0.2s ease;
 }
 
 .contact-form input,
@@ -128,18 +222,34 @@
   font-size: 0.95rem;
   box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
   box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
+/* Animation au focus des champs */
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: #3a5a40;
   box-shadow: 0 0 0 3px rgba(58, 90, 64, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Animation au survol des champs */
+.contact-form input:hover:not(:focus),
+.contact-form textarea:hover:not(:focus) {
+  border-color: #3a5a4090;
+  box-shadow: 0 4px 12px rgba(58, 90, 64, 0.1);
 }
 
 .contact-form textarea {
   min-height: 140px;
   resize: vertical;
+  transition: all 0.3s ease;
+}
+
+/* Animation de chargement pour le textarea */
+.contact-form textarea:focus {
+  min-height: 160px;
 }
 
 .form-buttons {
@@ -155,17 +265,45 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de ripple sur les boutons */
+.contact-form button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.contact-form button:active::before {
+  width: 300px;
+  height: 300px;
 }
 
 .contact-form button[type="submit"] {
   background-color: #3a5a40;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(58, 90, 64, 0.3);
 }
 
 .contact-form button[type="submit"]:hover {
   background-color: #1b1b1b;
   border-color: #1b1b1b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button[type="submit"]:active {
+  transform: translateY(0);
 }
 
 .contact-form button[type="reset"] {
@@ -177,8 +315,101 @@
   background-color: #3a5a40;
   color: #fff;
   border-color: #3a5a40;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 90, 64, 0.2);
 }
 
+/* Animation pour le message de statut */
+#form-status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  animation: fadeInUp 0.4s ease-out;
+  background: rgba(58, 90, 64, 0.05);
+}
+
+/* Animation de succès pour les champs */
+.contact-form input.success,
+.contact-form textarea.success {
+  border-color: #3a5a40;
+  background-color: rgba(58, 90, 64, 0.02);
+}
+
+/* Animation de chargement du bouton */
+.contact-form button.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.contact-form button.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Animations clés */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Effet de particules en arrière-plan (optionnel) */
+.pages_contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(58, 90, 64, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+/* Amélioration responsive */
 @media (max-width: 767px) {
   .pages_contacts {
     padding: 70px 16px 50px;
@@ -205,5 +436,19 @@
 
   .form-row-inline label {
     width: auto;
+  }
+  
+  /* Désactive certaines animations sur mobile pour meilleures performances */
+  .contact-info:hover,
+  .contact-form-wrapper:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Effet de transition pour le scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .contact-info,
+  .contact-form-wrapper {
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   }
 }
