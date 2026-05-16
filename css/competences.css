@@ -9,6 +9,14 @@
   font-size: 2rem;
   margin-bottom: 35px;
   color: #3a5a40;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.competences h2.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .skills-grid {
@@ -25,7 +33,27 @@
   border: 1px solid rgba(58, 90, 64, 0.18);
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Délais échelonnés pour les cartes */
+.skill-card:nth-child(1) { transition-delay: 0s; }
+.skill-card:nth-child(2) { transition-delay: 0.05s; }
+.skill-card:nth-child(3) { transition-delay: 0.1s; }
+.skill-card:nth-child(4) { transition-delay: 0.15s; }
+.skill-card:nth-child(5) { transition-delay: 0.2s; }
+.skill-card:nth-child(6) { transition-delay: 0.25s; }
+.skill-card:nth-child(7) { transition-delay: 0.3s; }
+.skill-card:nth-child(8) { transition-delay: 0.35s; }
+.skill-card:nth-child(9) { transition-delay: 0.4s; }
+
+.skill-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .skill-card:hover {
   transform: translateY(-10px);
   background-color: #ffffff;

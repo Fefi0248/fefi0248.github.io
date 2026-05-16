@@ -9,6 +9,14 @@
   font-size: 2rem;
   margin-bottom: 35px;
   color: #3a5a40;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.pages_projets h2.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Section projets */
@@ -24,6 +32,15 @@
   font-weight: 600;
   color: #1b1b1b;
   margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.1s;
+}
+
+.projects-section h3.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Grille des projets */
@@ -57,6 +74,35 @@
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
   border: 1px solid #e0e0e0;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Animation pour chaque carte avec délai différent */
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais différents pour chaque carte */
+.project-card:nth-child(1) {
+  transition-delay: 0s;
+}
+.project-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.project-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.project-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.project-card:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.project-card:nth-child(6) {
+  transition-delay: 0.5s;
 }
 
 /* Sur tablette et laptop : image à gauche, texte à droite */

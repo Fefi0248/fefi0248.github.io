@@ -7,18 +7,25 @@
   overflow-x: hidden;
 }
 
-/* Animation d'entrée pour le titre */
+/* Titre principal avec animation au scroll */
 .pages_contacts h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
   color: #3a5a40;
-  animation: fadeInDown 0.8s ease-out;
   position: relative;
   display: inline-block;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Effet de soulignement animé pour le titre */
+.pages_contacts h2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Soulignement animé au survol (inchangé) */
 .pages_contacts h2::after {
   content: '';
   position: absolute;
@@ -72,16 +79,21 @@
   transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  /* On retire l'animation automatique, on utilise la classe .visible */
 }
 
-/* Délais d'animation différents pour chaque carte */
+.contact-info.visible,
+.contact-form-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .contact-info {
-  animation-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 .contact-form-wrapper {
-  animation-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .contact-info:hover,
@@ -91,21 +103,27 @@
   border-color: #3a5a4040;
 }
 
-/* Animation d'entrée pour les éléments de contact-info */
+/* Éléments texte de contact-info : animation au scroll */
 .contact-info p {
   font-size: 0.95rem;
   margin: 8px 0;
   color: #1b1b1b;
   opacity: 0;
   transform: translateX(-15px);
-  animation: slideInLeft 0.5s ease-out forwards;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.contact-info p:nth-child(1) { animation-delay: 0.2s; }
-.contact-info p:nth-child(2) { animation-delay: 0.3s; }
-.contact-info p:nth-child(3) { animation-delay: 0.4s; }
-.contact-info p:nth-child(4) { animation-delay: 0.5s; }
-.contact-info p:nth-child(5) { animation-delay: 0.6s; }
+.contact-info.visible p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Délais échelonnés pour les paragraphes */
+.contact-info p:nth-child(1) { transition-delay: 0.1s; }
+.contact-info p:nth-child(2) { transition-delay: 0.2s; }
+.contact-info p:nth-child(3) { transition-delay: 0.3s; }
+.contact-info p:nth-child(4) { transition-delay: 0.4s; }
+.contact-info p:nth-child(5) { transition-delay: 0.5s; }
 
 .contact-info h3 {
   font-size: 1.2rem;
@@ -127,7 +145,6 @@
   transition: all 0.3s ease;
 }
 
-/* Animation de soulignement pour les liens */
 .contact-info a::after {
   content: '';
   position: absolute;
@@ -168,7 +185,6 @@
   align-self: flex-start;
 }
 
-/* Animation de clignotement pour le titre du formulaire */
 @keyframes softPulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
@@ -225,7 +241,6 @@
   transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
-/* Animation au focus des champs */
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
@@ -234,7 +249,6 @@
   transform: translateY(-2px);
 }
 
-/* Animation au survol des champs */
 .contact-form input:hover:not(:focus),
 .contact-form textarea:hover:not(:focus) {
   border-color: #3a5a4090;
@@ -247,7 +261,6 @@
   transition: all 0.3s ease;
 }
 
-/* Animation de chargement pour le textarea */
 .contact-form textarea:focus {
   min-height: 160px;
 }
@@ -270,7 +283,6 @@
   overflow: hidden;
 }
 
-/* Effet de ripple sur les boutons */
 .contact-form button::before {
   content: '';
   position: absolute;
@@ -319,25 +331,22 @@
   box-shadow: 0 4px 12px rgba(58, 90, 64, 0.2);
 }
 
-/* Animation pour le message de statut */
 #form-status {
   margin-top: 15px;
   padding: 10px;
   border-radius: 8px;
   text-align: center;
   font-size: 0.9rem;
-  animation: fadeInUp 0.4s ease-out;
+  transition: all 0.3s ease;
   background: rgba(58, 90, 64, 0.05);
 }
 
-/* Animation de succès pour les champs */
 .contact-form input.success,
 .contact-form textarea.success {
   border-color: #3a5a40;
   background-color: rgba(58, 90, 64, 0.02);
 }
 
-/* Animation de chargement du bouton */
 .contact-form button.loading {
   position: relative;
   pointer-events: none;
@@ -362,41 +371,9 @@
   to { transform: translateY(-50%) rotate(360deg); }
 }
 
-/* Animations clés */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* On supprime les keyframes inutiles (fadeInDown, fadeInUp, slideInLeft) car on utilise les transitions */
+/* On garde seulement softPulse et spin */
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Effet de particules en arrière-plan (optionnel) */
 .pages_contacts::before {
   content: '';
   position: absolute;
@@ -409,7 +386,6 @@
   pointer-events: none;
 }
 
-/* Amélioration responsive */
 @media (max-width: 767px) {
   .pages_contacts {
     padding: 70px 16px 50px;
@@ -437,15 +413,13 @@
   .form-row-inline label {
     width: auto;
   }
-  
-  /* Désactive certaines animations sur mobile pour meilleures performances */
+
   .contact-info:hover,
   .contact-form-wrapper:hover {
     transform: translateY(-4px);
   }
 }
 
-/* Effet de transition pour le scroll */
 @media (prefers-reduced-motion: no-preference) {
   .contact-info,
   .contact-form-wrapper {

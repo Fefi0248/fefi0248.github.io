@@ -20,9 +20,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: heroUp 1s ease-out forwards;
 }
 
 /* Forme décorative en arrière-plan (douce, discrète) */
@@ -40,32 +37,26 @@
   animation: heroUp 1.2s ease-out forwards;
 }
 
-/* Contenu */
+/* Contenu - Plus d'animation pour que le h1 n'ait pas d'effet */
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: heroUp 1s ease-out forwards;
-  animation-delay: 0.15s;
+  /* Suppression totale de l'animation */
 }
 
-/* Titre principal */
+/* Titre principal - PAS D'ANIMATION, apparaît directement */
 .hero h1 {
   font-size: 2.4rem;
   font-weight: 700;
   color: #3a5a40;
   margin-bottom: 16px;
   line-height: 1.2;
-  opacity: 0;
-  transform: translateY(35px);
-  animation: heroUp 0.9s ease-out forwards;
-  animation-delay: 0.25s;
   font-family: 'PoliceTitre', sans-serif;
+  /* Pas d'opacity, pas de transform, pas d'animation */
 }
 
-/* Texte d’accroche */
+/* Texte d'accroche - avec animation */
 .hero p {
   font-size: 1.1rem;
   color: #1b1b1b;
@@ -74,10 +65,10 @@
   opacity: 0;
   transform: translateY(30px);
   animation: heroUp 0.9s ease-out forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.3s;
 }
 
-/* Boutons */
+/* Boutons - avec animation */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -87,7 +78,7 @@
   opacity: 0;
   transform: translateY(30px);
   animation: heroUp 0.9s ease-out forwards;
-  animation-delay: 0.55s;
+  animation-delay: 0.5s;
 }
 
 .btn {

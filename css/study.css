@@ -1,15 +1,19 @@
-.pages_etudes {
-  padding: 70px 20px;
-  background: #dad7cd;
-  text-align: center;
-}
-
+/* ========== SECTION ÉTUDES - ANIMATIONS ========== */
 .pages_etudes h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 35px;
   color: #3a5a40;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
+.pages_etudes h2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Grille des études */
 .studies-grid {
   display: grid;
@@ -17,16 +21,32 @@
   gap: 30px;
 }
 
-/* Carte */
+/* Carte étude */
 .study-card {
-  background: #f4f4f4; /* gris très clair */
+  background: #f4f4f4;
   border-radius: 24px;
   padding: 30px;
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.12);
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
   border: 1px solid #e0e0e0;
+  opacity: 0;
+  transform: translateY(40px);
 }
+
+/* Animation progressive des cartes */
+.study-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais échelonnés */
+.study-card:nth-child(1) { transition-delay: 0s; }
+.study-card:nth-child(2) { transition-delay: 0.1s; }
+.study-card:nth-child(3) { transition-delay: 0.2s; }
+.study-card:nth-child(4) { transition-delay: 0.3s; }
+.study-card:nth-child(5) { transition-delay: 0.4s; }
+.study-card:nth-child(6) { transition-delay: 0.5s; }
 
 .study-card:hover {
   transform: translateY(-10px);
@@ -47,7 +67,8 @@
   margin: 6px 0;
 }
 
-.study-card {
+.study-card span {
+  display: block;
   margin-top: 12px;
   font-size: 0.95rem;
   color: #6b7280;

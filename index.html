@@ -12,16 +12,32 @@
   <link rel="stylesheet" href="css/study.css">
   <link rel="stylesheet" href="css/competences.css">
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
-<!--script src="home.js"></script-->
 <body>
 
-<header class="site-header">
-  <nav class="my-navbar">
-    <a class="logo" href="#Home">Mon Portfolio</a>
-
+<header>
+  <div class="my-navbar">
+    <a href="#" class="logo">Fefimihanta</a>
+    
+    <ul class="nav-desktop">
+      <li><a href="#Home">Accueil</a></li>
+      <li><a href="#About">À propos</a></li>
+      <li><a href="#Projets">Mes projets</a></li>
+      <li><a href="#Etudes">Mes études</a></li>
+      <li><a href="#Competences">Compétences</a></li>
+      <li><a href="#Contacts">Contacts</a></li>
+    </ul>
+    
     <details class="nav-dropdown">
-      <summary>Menu</summary>
+      <summary>
+        <span class="menu-text">Menu</span>
+        <span class="menu-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </span>
+      </summary>
       <ul>
         <li><a href="#Home">Accueil</a></li>
         <li><a href="#About">À propos</a></li>
@@ -31,16 +47,7 @@
         <li><a href="#Contacts">Contacts</a></li>
       </ul>
     </details>
-
-    <ul class="nav-desktop">
-      <li><a href="#Home">Accueil</a></li>
-      <li><a href="#About">À propos</a></li>
-      <li><a href="#Projets">Mes projets</a></li>
-      <li><a href="#Etudes">Mes études</a></li>
-      <li><a href="#Competences">Compétences</a></li>
-      <li><a href="#Contacts">Contacts</a></li>
-    </ul>
-  </nav>
+  </div>
 </header>
 
 <section class="hero" id="Home">
@@ -277,11 +284,10 @@
         <div class="contact-info">
             <p><strong>WhatsApp :</strong> +261 38 39 017 23</p>
             <p><strong>LinkedIn :</strong>
-                <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener">
-                    Fefimihanta Randrianjafimiadana</a></p>
+                <a href="#">Fefimihanta Randrianjafimiadana</a></p>
             <p><strong>e-mail :</strong>
                 <a href="mailto:mihantafefi@gmail.com">mihantafefi@gmail.com</a></p>
-            <p><strong>Facebook :</strong> <a href="#">Randrianjafimiadana Fefimihanta</a></p>
+            <p><strong>Facebook :</strong> <a href="https://www.facebook.com/fefimihanta.andrianjafimiadana">Randrianjafimiadana Fefimihanta</a></p>
             <p><strong>Adresse :</strong> Campus universitaire B309</p>
         </div>
 
@@ -315,11 +321,65 @@
     </div>
 </section>
 
-<!-- EmailJS (obligatoire) -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Mon Portfolio</h3>
+      <p>Créativité & développement web au service de projets porteurs de sens.</p>
+    </div>
+    
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#Home">Accueil</a></li>
+        <li><a href="#About">À propos</a></li>
+        <li><a href="#Projets">Projets</a></li>
+        <li><a href="#Etudes">Études</a></li>
+        <li><a href="#Competences">Compétences</a></li>
+        <li><a href="#Contacts">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-social">
+      <h4>Suivez-moi</h4>
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub" target="_blank">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.52.117-3.16 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.64.24 2.86.118 3.16.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.22 0 1.602-.015 2.894-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" target="_blank">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.771-.773 1.771-1.729V1.729C24 .774 23.222 0 22.225 0z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter" target="_blank">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.58-11.797c0-.24-.005-.48-.015-.718.99-.715 1.85-1.6 2.527-2.614z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-contact">
+      <h4>Contact rapide</h4>
+      <p><a href="mailto:mihantafefi@gmail.com">mihantafefi@gmail.com</a></p>
+      <p><a href="tel:+261383901723">+261 38 39 017 23</a></p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
+    <p class="footer-credit">Design by <span>Fefimihanta</span></p>
+  </div>
+  
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut">↑</button>
+</footer>
 
-<!-- Ton fichier JS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="home.js"></script>
 <script src="contact.js"></script>
+<script src="animation.js"></script>
 
 </body>
 </html>
